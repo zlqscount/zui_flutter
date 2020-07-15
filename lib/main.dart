@@ -4,14 +4,13 @@ import 'package:zuiflutter/commonuse/common_use.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Components'),
     );
   }
 }
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
-  final String title;
+  String title;
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -48,24 +47,33 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         currentIndex: selectIndex,
         selectedItemColor: Colors.amber[800],
-        onTap: onItemTapChangeContent(selectIndex),
+        onTap: (index) {
+          setState(() {
+            selectIndex = index;
+            switch (index) {
+              case 0:
+                widget.title = "Components";
+                break;
+              case 1:
+                widget.title = "Helper";
+                break;
+              case 2:
+                widget.title = "Lab";
+                break;
+            }
+          });
+        },
       ),
     );
-  }
-
-  Function onItemTapChangeContent(int index) {
-    setState(() {
-      selectIndex = index;
-    });
   }
 
   List<Widget> _widgetContent = <Widget>[
     CommomUse(),
     Text(
-      'Index 1: Business',
+      'Index 1: Helper',
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Lab',
     ),
   ];
 }

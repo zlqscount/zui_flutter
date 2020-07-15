@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:zuiflutter/commonuse/detail/text/detail/single_line_edittext.dart';
+import 'package:zuiflutter/view/common_view.dart';
 
 class TextRoute extends StatefulWidget {
   @override
@@ -15,7 +17,18 @@ class TextState extends State<TextRoute> {
         title: Text("文本类控件"),
       ),
       body: ListView(
-        children: <Widget>[Text("text")],
+        children: <Widget>[
+          ItemView(
+            "文本",
+            "value",
+            clickListener: () {
+              Navigator.push(context,
+                  new MaterialPageRoute(builder: (buildContext) {
+                return SingleLineEditTextRoute();
+              }));
+            },
+          )
+        ],
       ),
     );
   }

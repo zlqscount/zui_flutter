@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zuiflutter/commonuse/detail/text/text_route.dart';
 
+///components模块
 class CommomUse extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
