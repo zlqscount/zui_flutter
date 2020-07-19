@@ -1,8 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:zuiflutter/commonuse/common_use.dart';
 import 'package:zuiflutter/splash/splash_route.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+  // 判断当前设备是否为安卓
+  /*if (Platform.isAndroid) {
+    // 这一步设置状态栏颜色为透明
+    SystemUiOverlayStyle systemUiOverlayStyle =
+    SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+  }*/
+}
 
 class MyApp extends StatefulWidget {
   @override
