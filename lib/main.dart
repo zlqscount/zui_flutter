@@ -1,16 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:zuiflutter/commonuse/common_use.dart';
+import 'package:zuiflutter/splash/splash_route.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+/*@override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Components'),
+    );
+  }*/
+}
+
+class MyAppState extends State {
+  bool isMainRoute = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: isMainRoute
+          ? MyHomePage(title: 'Components')
+          : SplashRoute(() {
+              setState(() {
+                isMainRoute = true;
+              });
+            }),
     );
   }
 }
