@@ -11,9 +11,11 @@ class ItemView extends StatelessWidget {
   double divideLineHeight;
   Color divideLineColor;
   Container arrowContainer;
+  bool isInkStyle;
 
   ItemView(this.name, this.value,
-      {this.clickListener,
+      {this.isInkStyle = true,
+      this.clickListener,
       this.nameStyle = const TextStyle(color: Color(0xff444444), fontSize: 15),
       this.valueStyle = const TextStyle(color: Color(0xff999999), fontSize: 15),
       this.divideLineHeight = 0.5,
@@ -22,55 +24,69 @@ class ItemView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        if (clickListener != null) {
-          clickListener();
-        }
-      },
-      child: Column(
-        children: <Widget>[
-          GestureDetector(
-            child: Container(
-              decoration: BoxDecoration(),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    name,
-                    style: nameStyle,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        child: Text(
-                          value,
-                          style: valueStyle,
-                        ),
+    Column child = Column(
+      children: <Widget>[
+        GestureDetector(
+          child: Container(
+            decoration: BoxDecoration(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  name,
+                  style: nameStyle,
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      child: Text(
+                        value,
+                        style: valueStyle,
                       ),
-                      arrowContainer == null
-                          ? Icon(
-                              Icons.chevron_right,
-                              color: Color(0xff999999),
-                            )
-                          : arrowContainer
-                    ],
-                  ),
-                ],
-              ),
-              padding: EdgeInsets.all(10),
+                    ),
+                    arrowContainer == null
+                        ? Icon(
+                            Icons.chevron_right,
+                            color: Color(0xff999999),
+                          )
+                        : arrowContainer
+                  ],
+                ),
+              ],
             ),
+            padding: EdgeInsets.all(10),
           ),
-          Container(
-            padding: EdgeInsets.only(left: 10),
+        ),
+        Container(
+          padding: EdgeInsets.only(left: 10),
+          child: Container(
+            height: divideLineHeight,
+            decoration: BoxDecoration(color: divideLineColor),
+          ),
+        )
+      ],
+    );
+    return isInkStyle
+        ? InkWell(
+            onTap: () {
+              if (clickListener != null) {
+                clickListener();
+              }
+            },
             child: Container(
-              height: divideLineHeight,
-              decoration: BoxDecoration(color: divideLineColor),
+              child: child,
             ),
           )
-        ],
-      ),
-    );
+        : GestureDetector(
+            onTap: () {
+              if (clickListener != null) {
+                clickListener();
+              }
+            },
+            child: Container(
+              child: child,
+            ),
+          );
   }
 }
