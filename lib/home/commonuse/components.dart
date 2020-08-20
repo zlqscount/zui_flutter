@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:zuiflutter/commonuse/detail/text/text_route.dart';
+import 'package:zuiflutter/home/commonuse/detail/text/text_route.dart';
 
 ///components模块
-class CommomUse extends StatefulWidget {
+class ComponentsRoute extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return CommomUseState();
+    return ComponentsState();
   }
 }
 
-class CommomUseState extends State<CommomUse> {
+class ComponentsState extends State<ComponentsRoute> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

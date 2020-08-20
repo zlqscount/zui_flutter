@@ -1,8 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:zuiflutter/commonuse/common_use.dart';
+import 'package:zuiflutter/home/commonuse/components.dart';
 import 'package:zuiflutter/splash/splash_route.dart';
 
 void main() {
@@ -105,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   List<Widget> _widgetContent = <Widget>[
-    CommomUse(),
+    ComponentsRoute(),
     Text(
       'Index 1: Helper',
     ),
@@ -115,46 +114,3 @@ class _MyHomePageState extends State<MyHomePage> {
   ];
 }
 
-class ItemContainer extends Container {
-  String name;
-  String imgAssets;
-  Function function;
-
-  ItemContainer(
-      {this.name = "——",
-      this.imgAssets = 'images/ic_flutter.png',
-      this.function});
-
-  @override
-  Widget get child {
-    return GestureDetector(
-      onTap: () {
-        if (function != null) {
-          function();
-        }
-      },
-      child: Container(
-        decoration: BoxDecoration(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              alignment: Alignment.center,
-              width: 40,
-              height: 40,
-              margin: EdgeInsets.only(top: 10),
-              child: Image.asset(imgAssets),
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: Text(
-                name,
-                textAlign: TextAlign.center,
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
