@@ -24,7 +24,7 @@ class TextState extends State<TextRoute> {
       body: ListView(
         children: <Widget>[
           ItemView(
-            "左标题",
+            "ItemView",
             text1,
             clickListener: () {
               Navigator.push(context,
@@ -47,9 +47,9 @@ class TextState extends State<TextRoute> {
             },
           ),
           Container(child:
-          EllipsisText("1111111111111111111111111111222222222222222222222222222333333333333333"),
+          EllipsisText("EllipsisText 1111111111111111111111111111222222222222222222222222222333333333333333"),
             margin: EdgeInsets.all(10),),
-          Container(child: EllipsisText("1111111111111111111111111111222222222222222222222222222333333333333333444444444444444444445555555555555555556666666666666", maxLines: 3,),
+          Container(child: EllipsisText("EllipsisText 1111111111111111111111111111222222222222222222222222222333333333333333444444444444444444445555555555555555556666666666666", maxLines: 3,),
           margin: EdgeInsets.all(10),),
         ],
       ),

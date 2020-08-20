@@ -15,7 +15,7 @@ class SingleLineEditTextRoute extends StatefulWidget {
   SingleLineEditTextRoute({
     this.saveClickListener,
     this.cancelClickListener,
-    this.title = "",
+    this.title = "SingleLineEditTextRoute",
     this.content1,
     this.content2,
     this.editTextHint1 = "请在这里输入",
