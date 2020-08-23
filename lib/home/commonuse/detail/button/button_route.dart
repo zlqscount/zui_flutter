@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:zuiflutter/view/button/self_button.dart';
 
 class ButtonRoute extends StatefulWidget {
@@ -36,12 +35,9 @@ class _ButtonState extends State<ButtonRoute> {
           padding: EdgeInsets.all(10),
           children: <Widget>[
             CommonButton(
-              "CommonButton 按下弹出flutter toast",
+              "CommonButton",
               MClickListener: () {
-                Fluttertoast.cancel();
-                Fluttertoast.showToast(
-                    msg: "按下弹出 flutter toast " + (count++).toString(),
-                    fontSize: 13);
+                print("press");
               },
             ),
             SizedBox(
