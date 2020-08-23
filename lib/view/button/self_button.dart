@@ -10,7 +10,7 @@ class CommonButton extends Container {
   ///是否自适应
   bool fitSelf;
 
-  ///普通按钮
+  ///通用按钮
   CommonButton(this.tx,
       {this.MClickListener,
       this.textStyle,

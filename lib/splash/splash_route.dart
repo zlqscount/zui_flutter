@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 class SplashRoute extends StatefulWidget {
   Function CountDownEndListener;
 
-
   @override
   State<StatefulWidget> createState() {
     return _SplashState(CountDownEndListener);
@@ -44,9 +43,22 @@ class _SplashState extends State {
     return new Scaffold(
       body: Center(
         child: Column(
-           mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[ Image.asset("images/ic_flutter.png",width: 50, height: 50,),SizedBox(height: 3,), Text("ZUI $countdown", style: TextStyle(fontSize: 15),),],
+          children: <Widget>[
+            Image.asset(
+              "images/ic_flutter.png",
+              width: 50,
+              height: 50,
+            ),
+            SizedBox(
+              height: 3,
+            ),
+            Text(
+              "ZUI $countdown",
+              style: TextStyle(fontSize: 15),
+            ),
+          ],
         ),
       ),
     );
