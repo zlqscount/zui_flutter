@@ -12,7 +12,7 @@ class ItemView extends StatelessWidget {
   Color divideLineColor;
   Container arrowContainer;
   bool isInkStyle;
-
+  ///item项
   ItemView(this.name, this.value,
       {this.isInkStyle = true,
       this.clickListener,
@@ -49,6 +49,7 @@ class ItemView extends StatelessWidget {
                   children: <Widget>[
                     Expanded(
                       child: Container(
+                        alignment: Alignment.centerRight,
                         child: Text(
                           value,
                           style: valueStyle,

@@ -46,7 +46,7 @@ class _SplashState extends State {
         child: Column(
            mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[Text("ZUI $countdown"), Image.asset("images/ic_flutter.png",width: 30, height: 30,)],
+          children: <Widget>[ Image.asset("images/ic_flutter.png",width: 50, height: 50,),SizedBox(height: 3,), Text("ZUI $countdown", style: TextStyle(fontSize: 15),),],
         ),
       ),
     );

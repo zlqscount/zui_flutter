@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zuiflutter/home/commonuse/detail/button/button_route.dart';
 import 'package:zuiflutter/home/commonuse/detail/text/text_route.dart';
 
 ///components模块
@@ -33,6 +34,12 @@ class ComponentsState extends State<ComponentsRoute> {
             ),
             ItemContainer(
               name: "Button",
+              clickListener: () {
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (buildContext) {
+                  return ButtonRoute();
+                }));
+              },
             ),
             ItemContainer(
               name: "appBar",

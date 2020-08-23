@@ -6,7 +6,7 @@ class EllipsisText extends Container {
   String _text;
   TextStyle textStyle;
   int maxLines;
-
+  ///带省略号的文本控件
   EllipsisText(this._text,
       {this.textStyle =
           const TextStyle(color: Color(0xff444444), fontSize: 15), this.maxLines = 1});
