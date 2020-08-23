@@ -32,27 +32,41 @@ class ItemView extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
-                  name,
-                  style: nameStyle,
+                Expanded(
+                  child: Text(
+                    name,
+                    style: nameStyle,
+                  ),
+                  flex: 1,
                 ),
-                Row(
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                    child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: <Widget>[
-                    Container(
-                      child: Text(
-                        value,
-                        style: valueStyle,
+                    Expanded(
+                      child: Container(
+                        child: Text(
+                          value,
+                          style: valueStyle,
+                        ),
                       ),
+                      flex: 3,
                     ),
-                    arrowContainer == null
-                        ? Icon(
-                            Icons.chevron_right,
-                            color: Color(0xff999999),
-                          )
-                        : arrowContainer
+                    Expanded(
+                      child: arrowContainer == null
+                          ? Icon(
+                              Icons.chevron_right,
+                              color: Color(0xff999999),
+                            )
+                          : arrowContainer,
+                      flex: 1,
+                    )
                   ],
-                ),
+                )),
               ],
             ),
             padding: EdgeInsets.all(10),

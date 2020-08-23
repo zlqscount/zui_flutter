@@ -24,7 +24,7 @@ class TextState extends State<TextRoute> {
       body: ListView(
         children: <Widget>[
           ItemView(
-            "ItemView",
+            "ItemView 1111111111111111111111111111222222222222222222222222222333333333333333",
             text1,
             clickListener: () {
               Navigator.push(context,
