@@ -30,6 +30,7 @@ class ItemView extends StatelessWidget {
           child: Container(
             decoration: BoxDecoration(),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Expanded(

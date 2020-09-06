@@ -20,6 +20,7 @@ class TextUtils {
     return flag;
   }
 
+  ///输出非空字符串
   static String outPutNoneNullStr(String str) {
     return strNoteNull(str) ? str : "";
   }

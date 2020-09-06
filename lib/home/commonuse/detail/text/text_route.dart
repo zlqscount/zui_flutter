@@ -46,9 +46,11 @@ class TextState extends State<TextRoute> {
               }));
             },
           ),
+          Container(height: 50,),
           Container(child:
           EllipsisText("EllipsisText 1111111111111111111111111111222222222222222222222222222333333333333333"),
             margin: EdgeInsets.all(10),),
+          Container(height: 50,),
           Container(child: EllipsisText("EllipsisText 1111111111111111111111111111222222222222222222222222222333333333333333444444444444444444445555555555555555556666666666666", maxLines: 3,),
           margin: EdgeInsets.all(10),),
         ],

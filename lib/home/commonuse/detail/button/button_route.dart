@@ -35,9 +35,11 @@ class _ButtonState extends State<ButtonRoute> {
           padding: EdgeInsets.all(10),
           children: <Widget>[
             CommonButton(
-              "CommonButton",
+              "CommonButton $count",
               MClickListener: () {
-                print("press");
+                setState(() {
+                  count++;
+                });
               },
             ),
             SizedBox(
