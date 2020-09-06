@@ -12,6 +12,8 @@ class FullScreemImageRoute extends StatefulWidget {
 }
 
 class _FullScreemImageState extends State<FullScreemImageRoute> {
+  final double HEIGHT = 200;
+
   @override
   void initState() {
     super.initState();
@@ -24,12 +26,26 @@ class _FullScreemImageState extends State<FullScreemImageRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.center,children: [
-      Stack(children: [
-
-        Container(height: 100,color: Colors.grey,),
-        Container(child: Image.network(widget.imageUrl, height: 100,width: double.maxFinite,),),
-      ],),
-    ],);
+    return Container(child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Stack(
+          children: [
+            Container(
+              height: HEIGHT,
+              color: Colors.grey,
+            ),
+            Container(
+              child: Image.network(
+                widget.imageUrl,
+                height: HEIGHT,
+                fit: BoxFit.fill,
+                width: double.maxFinite,
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),color: Colors.black,);
   }
 }
